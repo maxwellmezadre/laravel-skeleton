@@ -14,6 +14,7 @@
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
+        "captainhook/captainhook-phar": "^5.24",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.0",
         "laravel/pail": "^1.1",
@@ -23,7 +24,9 @@
         "nunomaduro/collision": "^8.1",
         "pestphp/pest": "^3.7",
         "pestphp/pest-plugin-laravel": "^3.0",
-        "rector/rector": "^2.0"
+        "ramsey/conventional-commits": "^1.5",
+        "rector/rector": "^2.0",
+        "veewee/composer-run-parallel": "^1.4"
     },
     "autoload": {
         "psr-4": {
@@ -56,6 +59,25 @@
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+        ],
+        "format:rectify": "rector process --ansi",
+        "format:code-style": "pint",
+        "format": [
+            "@format:rectify",
+            "@format:code-style"
+        ],
+        "test:rectify": "rector --dry-run",
+        "test:code-style": "pint --test",
+        "test:types": "phpstan analyse",
+        "test": [
+            "@test:rectify",
+            "@test:code-style",
+            "@test:types"
+        ],
+        "test:parallel": "@parallel test:rectify test:code-style test:types",
+        "format-and-test": [
+            "@format",
+            "@parallel test:types"
         ]
     },
     "extra": {
@@ -68,8 +90,10 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
+            "captainhook/captainhook-phar": true,
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "veewee/composer-run-parallel": true
         }
     },
     "minimum-stability": "stable",
