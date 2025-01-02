@@ -54,7 +54,7 @@ final class AppServiceProvider extends ServiceProvider
 
     private function configureExtraPermissions(): void
     {
-        Gate::define('viewLogViewer', fn (User $user): bool => true);
+        Gate::define('viewLogViewer', fn (?User $user): bool => true);
     }
 
     private function configureStringMacros(): void
