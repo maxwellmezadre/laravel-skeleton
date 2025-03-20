@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('inspire', function (): void {
 
-    /* @var Command $this */
-    /* @phpstan-ignore-next-line */
+    /** @var Command $this */
     $this->comment(Inspiring::quote());
 
 })->purpose('Display an inspiring quote')->hourly();
