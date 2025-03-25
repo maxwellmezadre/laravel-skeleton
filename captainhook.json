@@ -14,7 +14,7 @@
                 "action": "composer test:parallel"
             },
             {
-                "action": "./node_modules/.bin/prettier --write resources/**/*.blade.php"
+                "action": "npx prettier --write resources/**/*.blade.php"
             }
         ]
     }

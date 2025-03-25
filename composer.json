@@ -69,13 +69,19 @@
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
         ],
         "format:rectify": "rector process --ansi",
-        "format:code-style": "pint",
+        "format:code-style": [
+            "pint",
+            "npx prettier --write resources/**/*.blade.php"
+        ],
         "format": [
             "@format:rectify",
             "@format:code-style"
         ],
         "test:rectify": "rector --dry-run",
-        "test:code-style": "pint --test",
+        "test:code-style": [
+            "pint --test",
+            "npx prettier --check resources/**/*.blade.php"
+        ],
         "test:types": "phpstan analyse",
         "test:arch": "pest --filter=arch --parallel --bail",
         "test:type-coverage": "pest --type-coverage --min=100 --parallel --bail",
