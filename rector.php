@@ -2,14 +2,9 @@
 
 declare(strict_types=1);
 
-use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 use Rector\Config\RectorConfig;
 use Rector\EarlyReturn\Rector\Return_\ReturnBinaryOrToEarlyReturnRector;
 use Rector\Php74\Rector\Closure\ClosureToArrowFunctionRector;
-use Rector\Php82\Rector\Class_\ReadOnlyClassRector;
-use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
-use Rector\Privatization\Rector\ClassMethod\PrivatizeFinalClassMethodRector;
-use Rector\Privatization\Rector\Property\PrivatizeFinalClassPropertyRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeDeclarationRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeDeclarationRector;
 use Rector\TypeDeclaration\Rector\Property\AddPropertyTypeDeclarationRector;
@@ -25,17 +20,12 @@ return RectorConfig::configure()
         __DIR__.'/tests',
     ])
     ->withRules([
-        InlineConstructorDefaultToPropertyRector::class,
         DeclareStrictTypesRector::class,
         AddParamTypeDeclarationRector::class,
         AddReturnTypeDeclarationRector::class,
         AddPropertyTypeDeclarationRector::class,
-        ReadOnlyClassRector::class,
-        PrivatizeFinalClassMethodRector::class,
-        PrivatizeFinalClassPropertyRector::class,
     ])
     ->withSkip([
-        AddOverrideAttributeToOverriddenMethodsRector::class,
         ReturnBinaryOrToEarlyReturnRector::class,
         ClosureToArrowFunctionRector::class,
     ])
