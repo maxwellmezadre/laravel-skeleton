@@ -71,8 +71,8 @@
         ],
         "format:rectify": "rector process --ansi",
         "format:code-style": [
-            "pint",
-            "npx prettier --write resources/**/*.blade.php"
+            "pint --dirty",
+            "npm run format --check"
         ],
         "format": [
             "@format:rectify",
@@ -81,11 +81,11 @@
         "test:rectify": "rector --dry-run",
         "test:code-style": [
             "pint --test",
-            "npx prettier --check resources/**/*.blade.php"
+            "npm run format --check"
         ],
         "test:types": "phpstan analyse",
-        "test:arch": "pest --filter=arch --parallel --bail",
-        "test:type-coverage": "pest --type-coverage --min=100 --parallel --bail",
+        "test:arch": "pest --filter=arch --parallel --bail --retry",
+        "test:type-coverage": "pest --type-coverage --min=100 --parallel --bail --retry --compact",
         "test:unit": "pest --parallel --bail",
         "test:typos": "peck",
         "test": [

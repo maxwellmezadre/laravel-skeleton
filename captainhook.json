@@ -11,10 +11,18 @@
         "enabled": true,
         "actions": [
             {
-                "action": "composer test:parallel"
+                "action": "composer format:code-style"
             },
             {
-                "action": "npx prettier --write resources/**/*.blade.php"
+                "action": "npm run format"
+            }
+        ]
+    },
+    "pre-push": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "composer test:parallel"
             }
         ]
     }
