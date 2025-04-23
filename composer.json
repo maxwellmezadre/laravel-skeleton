@@ -84,8 +84,8 @@
             "npm run format --check"
         ],
         "test:types": "phpstan analyse",
-        "test:arch": "pest --filter=arch --parallel --bail --retry",
-        "test:type-coverage": "pest --type-coverage --min=100 --parallel --bail --retry --compact",
+        "test:arch": "pest --filter=arch --parallel --bail",
+        "test:type-coverage": "pest --type-coverage --min=100 --bail --retry --compact",
         "test:unit": "pest --parallel --bail",
         "test:typos": "peck",
         "test": [
