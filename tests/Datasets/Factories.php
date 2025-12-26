@@ -7,5 +7,5 @@ dataset('factories', function () {
 
     return collect($factories)
         ->map(fn (string $file): string => 'Database\Factories\\'.basename($file, '.php'))
-        ->toArray();
+        ->all();
 });

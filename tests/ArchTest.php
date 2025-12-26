@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Controller;
+
 arch()->preset()->php();
 
 arch()->preset()->security();
@@ -17,13 +19,13 @@ arch('avoid open for extension')
     ->expect('App')
     ->classes()
     ->toBeFinal()
-    ->ignoring(App\Http\Controllers\Controller::class);
+    ->ignoring(Controller::class);
 
 arch('ensure no extends')
     ->expect('App')
     ->classes()
     ->not->toBeAbstract()
-    ->ignoring(App\Http\Controllers\Controller::class);
+    ->ignoring(Controller::class);
 
 arch('avoid mutation')
     ->expect('App')

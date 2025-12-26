@@ -30,7 +30,7 @@ if (! function_exists('get_models')) {
 
         return collect($models)
             ->map(fn (string $file): string => 'App\Models\\'.basename($file, '.php'))
-            ->toArray();
+            ->all();
     }
 }
 

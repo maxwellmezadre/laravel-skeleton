@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
+use Illuminate\Contracts\Validation\ValidationRule;
+
 arch('rules')
     ->expect('App\Rules')
     ->toExtendNothing()
-    ->toImplement(Illuminate\Contracts\Validation\ValidationRule::class)
+    ->toImplement(ValidationRule::class)
     ->toOnlyBeUsedIn([
         'App\Http\Controllers',
         'App\Http\Requests',

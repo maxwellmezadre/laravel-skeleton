@@ -17,6 +17,6 @@ abstract class TestCase extends BaseTestCase
 
         $this->seed();
 
-        $this->actingAs(User::first());
+        $this->actingAs(User::query()->first());
     }
 }

@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+use Illuminate\Contracts\Queue\ShouldQueue;
+
 arch('jobs')
     ->expect('App\Jobs')
     ->toHaveMethod('handle')
     ->toHaveConstructor()
     ->toExtendNothing()
-    ->toImplement(Illuminate\Contracts\Queue\ShouldQueue::class);
+    ->toImplement(ShouldQueue::class);

@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Http\FormRequest;
+
 arch('controllers')
     ->expect('App\Http\Controllers')
     ->toExtendNothing()
-    ->toExtend(App\Http\Controllers\Controller::class)
+    ->toExtend(Controller::class)
     ->not->toBeUsed()
-    ->ignoring(App\Http\Controllers\Controller::class);
+    ->ignoring(Controller::class);
 
 arch('middleware')
     ->expect('App\Http\Middleware')
@@ -15,5 +18,5 @@ arch('middleware')
 
 arch('requests')
     ->expect('App\Http\Requests')
-    ->toExtend(Illuminate\Foundation\Http\FormRequest::class)
+    ->toExtend(FormRequest::class)
     ->toHaveMethod('rules');

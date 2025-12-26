@@ -2,10 +2,14 @@
 
 declare(strict_types=1);
 
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
-covers(App\Models\User::class);
+covers(User::class);
 
 arch('models')
     ->expect('App\Models')
@@ -42,7 +46,7 @@ arch('quantity models')
 arch('ensure factories', function (string $model): void {
     /* @var HasFactory $model */
     expect($model::factory())
-        ->toBeInstanceOf(Illuminate\Database\Eloquent\Factories\Factory::class);
+        ->toBeInstanceOf(Factory::class);
 })->with('models');
 
 arch('ensure datetime casts', function (string $model): void {

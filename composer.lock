@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bbd9a7b69dc8b84be353cf752644c74",
+    "content-hash": "903e9e9f89de6342c97f270518c952f4",
     "packages": [
         {
             "name": "brick/math",
@@ -7103,6 +7103,42 @@
             "time": "2025-04-07T20:06:18+00:00"
         },
         {
+            "name": "driftingly/rector-laravel",
+            "version": "2.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/driftingly/rector-laravel.git",
+                "reference": "aee9d4a1d489e7ec484fc79f33137f8ee051b3f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/driftingly/rector-laravel/zipball/aee9d4a1d489e7ec484fc79f33137f8ee051b3f7",
+                "reference": "aee9d4a1d489e7ec484fc79f33137f8ee051b3f7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "rector/rector": "^2.2.7",
+                "webmozart/assert": "^1.11"
+            },
+            "type": "rector-extension",
+            "autoload": {
+                "psr-4": {
+                    "RectorLaravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Rector upgrades rules for Laravel Framework",
+            "support": {
+                "issues": "https://github.com/driftingly/rector-laravel/issues",
+                "source": "https://github.com/driftingly/rector-laravel/tree/2.1.9"
+            },
+            "time": "2025-12-25T23:31:36+00:00"
+        },
+        {
             "name": "fakerphp/faker",
             "version": "v1.24.1",
             "source": {
@@ -10373,16 +10409,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.2.14",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "6d56bb0e94d4df4f57a78610550ac76ab403657d"
+                "reference": "f7166355dcf47482f27be59169b0825995f51c7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/6d56bb0e94d4df4f57a78610550ac76ab403657d",
-                "reference": "6d56bb0e94d4df4f57a78610550ac76ab403657d",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/f7166355dcf47482f27be59169b0825995f51c7d",
+                "reference": "f7166355dcf47482f27be59169b0825995f51c7d",
                 "shasum": ""
             },
             "require": {
@@ -10421,7 +10457,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.2.14"
+                "source": "https://github.com/rectorphp/rector/tree/2.3.0"
             },
             "funding": [
                 {
@@ -10429,7 +10465,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-09T10:57:55+00:00"
+            "time": "2025-12-25T22:00:18+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -12089,23 +12125,23 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "2.0.0",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "1b34b004e35a164bc5bb6ebd33c844b2d8069a54"
+                "reference": "9be6926d8b485f55b9229203f962b51ed377ba68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/1b34b004e35a164bc5bb6ebd33c844b2d8069a54",
-                "reference": "1b34b004e35a164bc5bb6ebd33c844b2d8069a54",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/9be6926d8b485f55b9229203f962b51ed377ba68",
+                "reference": "9be6926d8b485f55b9229203f962b51ed377ba68",
                 "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
                 "ext-date": "*",
                 "ext-filter": "*",
-                "php": "^8.2"
+                "php": "^7.2 || ^8.0"
             },
             "suggest": {
                 "ext-intl": "",
@@ -12115,7 +12151,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-feature/2-0": "2.0-dev"
+                    "dev-master": "1.10-dev"
                 }
             },
             "autoload": {
@@ -12131,10 +12167,6 @@
                 {
                     "name": "Bernhard Schussek",
                     "email": "bschussek@gmail.com"
-                },
-                {
-                    "name": "Woody Gilk",
-                    "email": "woody.gilk@gmail.com"
                 }
             ],
             "description": "Assertions to validate method input/output with nice error messages.",
@@ -12145,9 +12177,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/2.0.0"
+                "source": "https://github.com/webmozarts/assert/tree/1.12.1"
             },
-            "time": "2025-12-16T21:36:00+00:00"
+            "time": "2025-10-29T15:56:20+00:00"
         }
     ],
     "aliases": [],
@@ -12156,7 +12188,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.5"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
+use Illuminate\Notifications\Notification;
+
 arch('notifications')
     ->expect('App\Notifications')
     ->toHaveConstructor()
-    ->toExtend(Illuminate\Notifications\Notification::class)
+    ->toExtend(Notification::class)
     ->toOnlyBeUsedIn([
         'App\Console\Commands',
         'App\Http\Controllers',
