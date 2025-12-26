@@ -18,20 +18,21 @@
         "barryvdh/laravel-debugbar": "^3.16.2",
         "captainhook/captainhook-phar": "^5.27.3",
         "captainhook/hook-installer": "^1.0.4",
-        "driftingly/rector-laravel": "^2.1",
+        "driftingly/rector-laravel": "^2.1.9",
         "fakerphp/faker": "^1.24.1",
         "larastan/larastan": "^3.8.1",
+        "laravel/boost": "^1.8.7",
         "laravel/pail": "^1.2.4",
         "laravel/pint": "^1.26",
         "laravel/sail": "^1.51.0",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.3",
         "peckphp/peck": "^0.2",
-        "pestphp/pest": "^4.0",
+        "pestphp/pest": "^4.2",
         "pestphp/pest-plugin-laravel": "^4.0",
-        "pestphp/pest-plugin-type-coverage": "^4.0",
+        "pestphp/pest-plugin-type-coverage": "^4.0.3",
         "ramsey/conventional-commits": "^1.6",
-        "rector/rector": "^2.2.14",
+        "rector/rector": "^2.3.0",
         "veewee/composer-run-parallel": "^1.5"
     },
     "autoload": {
@@ -56,7 +57,8 @@
             "@php artisan log-viewer:publish"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan boost:update --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -113,6 +115,7 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
+        "bump-after-update": true,
         "allow-plugins": {
             "captainhook/captainhook-phar": true,
             "captainhook/hook-installer": true,
