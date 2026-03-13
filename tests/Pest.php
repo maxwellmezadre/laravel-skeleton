@@ -25,7 +25,7 @@ pest()->extend(TestCase::class)
         Http::preventStrayRequests();
     });
 
-pest()->project()->github('maxwellmezadre/filament-multi-tenancy-skeleton');
+pest()->project()->github('maxwellmezadre/laravel-skeleton');
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +50,3 @@ expect()->extend('toBeOne', fn () => $this->toBe(1));
 | global functions to help you to reduce the number of lines of code in your test files.
 |
 */
-
-function something(): void
-{
-    // ..
-}

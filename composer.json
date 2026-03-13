@@ -75,7 +75,7 @@
         "format:rectify": "rector process --ansi",
         "format:code-style": [
             "pint --dirty",
-            "npm run format --check"
+            "npm run format"
         ],
         "format": [
             "@format:rectify",
